@@ -15,14 +15,8 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
-        release {
-            minifyEnabled true   //开启混淆
-            zipAlignEnabled true  //压缩优化
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
         debug{
-            minifyEnabled true   //开启混淆
-            zipAlignEnabled true  //压缩优化
+            minifyEnabled false   //开启混淆
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -40,8 +34,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation files('libs/nsfw.aar')
-
-    implementation 'org.tensorflow:tensorflow-lite:1.13.1'
-    implementation 'org.tensorflow:tensorflow-lite-gpu:0.0.0-nightly'
+//    implementation project(path: ':nsfw')
+    implementation 'com.github.devzwy:open_nsfw_android:1.1.2'
 }
